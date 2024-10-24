@@ -1,5 +1,5 @@
 <script lang="ts">
-	const address = $state('');
+	let address = $state('');
 	let message = $state('');
 	let isPending = $state(false);
 
@@ -38,7 +38,7 @@
 		autocomplete="off"
 		data-lpignore="true"
 		data-1p-ignore="true"
-		value={address}
+		bind:value={address}
 	/>
 	<button
 		disabled={isPending}
