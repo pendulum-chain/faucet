@@ -1,9 +1,9 @@
 <script lang="ts">
-	let address = '';
-	let message = '';
-	let isPending = false;
+	let address = $state('');
+	let message = $state('');
+	let isPending = $state(false);
 
-	async function handleSubmit(event: Event) {
+	async function onsubmit(event: Event) {
 		event.preventDefault();
 		message = '';
 		isPending = true;
@@ -26,7 +26,7 @@
 	}
 </script>
 
-<form autocomplete="off" class="mt-5 text-lg" on:submit={handleSubmit}>
+<form autocomplete="off" class="mt-5 text-lg" {onsubmit}>
 	<label for="foucoco_address" class="text-gray-200">Foucoco address</label>
 	<input
 		type="text"
